@@ -1,0 +1,19 @@
+.content {
+  width: 90%;
+  margin: 5rem auto;
+}
+
+.img-box {
+  width: 250px;
+  border-radius: 1.5rem;
+  &:hover {
+    .current-img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.current-img {
+  transform: scale(1);
+  transition: 0.5s ease-in-out;
+}

@@ -1,0 +1,130 @@
+.nav-expand-color {
+  color: #3F3F3F;
+  // color:#8DC63F, #373737, #FFFFFF, #FCFCFC
+}
+
+.nav-info {
+  height: 60px;
+  display: block;
+  line-height: 60px;
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  padding: 0 1rem;
+}
+
+.bg-green {
+  background-color: #8dc63f;
+}
+
+// .nav-expand {
+//   right: 0;
+//   top: 4.3rem;
+//   z-index: 100;
+//   background: #061d25;
+// }
+
+// .btn-collapse {
+//   width: 50px;
+//   height: 50px;
+//   background-color: #ccbe91;
+
+//   padding-bottom: 0.6rem;
+//   border-radius: 50%;
+//   border: none;
+//   outline: none;
+// }
+
+// .line {
+//   margin-top: 0.4rem;
+//   width: 25px;
+//   height: 4px;
+//   background: #000;
+//   border-radius: 21px;
+//   transition: all 0.3s ease-in-out;
+// }
+
+.navbar {
+  top: 0;
+  z-index: 100;
+  padding: 0;
+  // padding-top: 0.25rem;
+  background-color: #101215;
+  // align-items: initial;
+}
+
+
+
+.nav-info-box {
+  cursor: pointer;
+}
+
+// .nav-info-box:hover {
+//   border-bottom: 3px solid #0bc6e3;
+// }
+
+// .wrapper-bg-blur {
+//   position: relative;
+// }
+
+// .background-blur {
+//   height: 310px;
+//   background: url("/assets/img/background-blur.jpg") no-repeat;
+//   background-size: 100% 100%;
+//   filter: blur(5px);
+// }
+
+// .fit-to-center {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   width: 100%;
+// }
+
+// .background-small {
+//   width: 90% !important;
+//   height: 75% !important;
+// }
+
+// .background-small::after {
+//   content: "";
+//   display: block;
+//   height: 147px;
+//   width: 97%;
+//   background: transparent;
+//   border: 1px solid #8a8b86;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
+
+// .bg-small-text {
+//   left: 6rem;
+//   bottom: 0;
+//   position: absolute;
+// }
+
+// .bread-crumb {
+//   color: #9c9e9d;
+//   font-weight: bold;
+// }
+
+@media only screen and (max-width: 1224px) {
+  .nav-info {
+    display: none;
+  }
+
+  .navbar {
+    justify-content: space-around !important;
+  }
+}
+
+@media only screen and (min-width: 1224px) {
+  .btn-collapse {
+    display: none;
+  }
+  .nav-expand {
+    display: none;
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "characters": [
+    {
+      "img": "assets/img/Aatrox_0.jpg",
+      "name": "Aatrox"
+    },
+    {
+      "img": "assets/img/Ahri_0.jpg",
+      "name": "Ahri"
+    },
+    {
+      "img": "assets/img/Akali_0.jpg",
+      "name": "Akali"
+    },
+    {
+      "img": "assets/img/Akshan_0.jpg",
+      "name": "Akshan"
+    },
+    {
+      "img": "assets/img/Alistar_0.jpg",
+      "name": "Alistar"
+    },
+    {
+      "img": "assets/img/Amumu_0.jpg",
+      "name": "Amumu"
+    },
+    {
+      "img": "assets/img/Anivia_0.jpg",
+      "name": "Anivia"
+    },
+    {
+      "img": "assets/img/Annie_0.jpg",
+      "name": "Annie"
+    },
+    {
+      "img": "assets/img/Aphelios_0.jpg",
+      "name": "Aphelios"
+    },
+    {
+      "img": "assets/img/Ashe_0.jpg",
+      "name": "Ashe"
+    },
+    {
+      "img": "assets/img/AurelionSol_0.jpg",
+      "name": "Aurelion Sol"
+    },
+    {
+      "img": "assets/img/Azir_0.jpg",
+      "name": "Azir"
+    },
+    {
+      "img": "assets/img/Bard_0.jpg",
+      "name": "Bard"
+    },
+    {
+      "img": "assets/img/Belveth_0.jpg",
+      "name": "BelVeth"
+    },
+    {
+      "img": "assets/img/Blitzcrank_0.jpg",
+      "name": "Blitzcrank"
+    }
+  ],
+  "navBar": [
+    { "label": "champions", "href":"champions"},
+    { "label": "Top Games", "href":"top"},
+    { "label": "New Games", "href":"new" },
+    { "label": "Slots", "href":"slots" },
+    { "label": "Jackpots" , "href":"jackpots"},
+    { "label": "Live", "href":"live" },
+    { "label": "Blackjack", "href":"blackjack"},
+    { "label": "Roulette", "href":"roulette" },
+    { "label": "Table", "href":"table" },
+    { "label": "Poker" , "href":"poker"},
+    { "label": "Other", "href":"order" }
+  ],
+  "heroesCategories": [
+    { "type": "tất cả" },
+    { "type": "xạ thủ" },
+    { "type": "đấu sĩ" },
+    { "type": "đỡ đòn" },
+    { "type": "sát thủ" },
+    { "type": "hỗ trợ" },
+    { "type": "pháp sư" }
+  ],
+  "breadCrumbs": [
+    {
+      "displayText": "trang chủ ",
+      "arrow": ">",
+      "url": "/"
+    },
+    {
+      "displayText": "giới thiệu ",
+      "arrow": ">",
+      "url": "/intro"
+    },
+    {
+      "displayText": "tướng",
+      "url": "/heroes"
+    }
+  ]
+}

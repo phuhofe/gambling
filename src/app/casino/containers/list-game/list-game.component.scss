@@ -1,0 +1,13 @@
+.hero-wrapper {
+  cursor: pointer;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  color: #ededed;
+  width: 250px;
+  border-radius: 1rem;
+}
+
+.content {
+  width: 90%;
+  margin: 5rem auto;
+}

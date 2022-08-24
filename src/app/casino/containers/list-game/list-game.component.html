@@ -1,0 +1,10 @@
+<div class="list-game">
+  <div class="d-flex flex-wrap content">
+    <div
+      *ngFor="let game of gamesOfCategory"
+      class="hero-wrapper fs-3 mx-2 my-3"
+    >
+      <app-game [game]="game"></app-game>
+    </div>
+  </div>
+</div>

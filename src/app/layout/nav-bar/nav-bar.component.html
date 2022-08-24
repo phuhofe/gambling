@@ -1,0 +1,29 @@
+<div class="navbar position-fixed w-100 d-flex justify-content-center">
+  <div class="w-100 d-flex flex-row justify-content-around align-items-center">
+    <div class="nav-info-box" *ngFor="let item of navbarData">
+      <a
+        routerLink="{{ item.href }}"
+        [routerLinkActive]="['bg-green']"
+        (click)="onSelectCategory(item.href)"
+        class="nav-info text-uppercase fw-normal list-unstyled text-decoration-none"
+      >
+        {{ item.label }}
+      </a>
+    </div>
+    <div class="nav-info-box">
+      <a class='nav-info text-uppercase fw-normal list-unstyled text-decoration-none'>Orders</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
