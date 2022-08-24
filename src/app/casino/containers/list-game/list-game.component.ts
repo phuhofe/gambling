@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { select, Store } from '@ngrx/store';
 import { combineLatest, filter } from 'rxjs';
 
 import { getGames } from '../../store/actions';
-import { selectGames,selectIsLoading } from '../../store/selectors';
-import { CasinoService } from '../../service/casino.service';
 import { Game } from '../../models/casino.model';
+import { selectGames, selectIsLoading } from '../../store/selectors';
 
 @Component({
   selector: 'app-list-game',
@@ -18,17 +17,14 @@ export class ListGameComponent implements OnInit {
   isLoading$ = this.store.pipe(select(selectIsLoading));
   games$ = this.store.pipe(select(selectGames));
 
-  gamesOfCategory: Array<Game> | undefined;
-  
-  categorySelected = 'top';
-  constructor(
-    private store: Store,
-    private casinoService: CasinoService,
-    private router: Router,
-  ) {
+  gamesOfCategory: Array<Game> = [];
+  categorySelected = '';
+
+  constructor(private store: Store, private route: ActivatedRoute) {
     this.store.dispatch(getGames());
-    const url = this.router.url.split('/');
-    this.casinoService.selectedCategory(url[1]);
+    this.route.params.subscribe((params) => {
+      this.categorySelected = params['id'];
+    });
   }
 
   ngOnInit(): void {
@@ -36,13 +32,14 @@ export class ListGameComponent implements OnInit {
   }
 
   subscriptionData() {
-    combineLatest(this.games$, this.casinoService.category$)
-      .pipe(filter(([games, category]) => games !== null && category !== null))
-      .subscribe(([games, category]) => {
+    combineLatest([this.games$, this.route.params])
+      .pipe(
+        filter(([games, params]) => games !== null && params['id'] !== null),
+      )
+      .subscribe(([games, params]) => {
         this.gamesOfCategory = games.filter((game: Game) =>
-          game.categories.includes(category)
+          game.categories.includes(params['id'])
         );
-        // console.log('arraySelected', this.gamesOfCategory);
       });
   }
 }

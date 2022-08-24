@@ -1,14 +1,16 @@
 import { Action, createFeatureSelector, createReducer, on } from '@ngrx/store';
 import * as CasinoActions from '../actions';
-import { Game } from '../../models/casino.model';
+import { Game, Jackpot } from '../../models/casino.model';
 
 export interface CasinoState {
   games: Array<Game>;
+  jackpots: Array<Jackpot>
   isLoading: boolean;
 }
 
 export const initialState: CasinoState = {
   games: [],
+  jackpots: [],
   isLoading: false,
 };
 
@@ -29,5 +31,21 @@ export const casinoReducer = createReducer(
 
   on(CasinoActions.getGamesFail, (state) => {
     return { ...state, isLoading: false };
-  })
+  }),
+
+  on(CasinoActions.getJackpots, (state) => {
+    return { ...state, isLoading: true };
+  }),
+
+  on(CasinoActions.getJackpotsSuccess, (state, action) => {
+    return {
+      ...state,
+      isLoading: false,
+      jackpots: action.jackpots,
+    };
+  }),
+
+  on(CasinoActions.getJackpotsFail, (state) => {
+    return { ...state, isLoading: false };
+  }),
 );

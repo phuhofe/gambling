@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BreadCrumbs } from '../../interface';
-import { Navbar } from '../../interface/nav-bar.interface';
-import { ResponseData } from '../../interface/lol-heroes.interface';
-
-import { LolHeroesService } from '../../services/lol-heroes/lol-heroes.service';
-import { CasinoService } from 'src/app/casino/service/casino.service';
 import { select, Store } from '@ngrx/store';
+
 import { getGames } from 'src/app/casino/store/actions';
 import { Game } from 'src/app/casino/models/casino.model';
 import { selectGames } from 'src/app/casino/store/selectors';
+import { CasinoService } from 'src/app/casino/service/casino.service';
+
+import { Navbar } from '../../interface/nav-bar.interface';
 
 @Component({
   selector: 'app-nav-bar',
@@ -25,8 +23,6 @@ export class NavBarComponent implements OnInit {
   showDropdown = false;
 
   constructor(
-    private lolHeroesService: LolHeroesService,
-    private casinoService: CasinoService,
     private store: Store
   ) {
     this.store.dispatch(getGames());
@@ -78,13 +74,8 @@ export class NavBarComponent implements OnInit {
       (item: Navbar) =>
         item.href !== 'ball' && item.href !== 'virtual' && item.href !== 'fun'
     );
-    console.log('navbarData', this.navbarData);
-    console.log('order', order);
     this.orders = order;
   }
 
-  onSelectCategory(category: string) {
-    this.casinoService.selectedCategory(category);
-    console.log('category', category);
-  }
+
 }
