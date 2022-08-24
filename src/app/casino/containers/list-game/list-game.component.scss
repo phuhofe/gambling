@@ -1,3 +1,7 @@
+.list-game {
+  width: 90%;
+  margin: 6rem auto;
+}
 .hero-wrapper {
   cursor: pointer;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
@@ -7,13 +11,12 @@
   border-radius: 1rem;
 }
 
-.content {
-  width: 85%;
-  margin: 5rem auto;
-}
-
 @media only screen and (max-width: 620px) {
   .content {
     justify-content: center !important;
   }
+}
+
+.spinner-color {
+  color: #8dc63f;
 }

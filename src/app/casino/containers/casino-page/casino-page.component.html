@@ -1,8 +1,8 @@
-  <router-outlet></router-outlet>
+<router-outlet></router-outlet>
 
 <div
   class="notify position-fixed border rounded"
-  [ngClass]="{ 'd-none': !isOpenNotify}"
+  [ngClass]="{ 'd-none': !isOpenNotify }"
   *ngIf="jackpot$ | async"
 >
   <div
