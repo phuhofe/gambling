@@ -22,9 +22,7 @@ export class NavBarComponent implements OnInit {
 
   showDropdown = false;
 
-  constructor(
-    private store: Store
-  ) {
+  constructor(private store: Store) {
     this.store.dispatch(getGames());
   }
 
@@ -39,12 +37,15 @@ export class NavBarComponent implements OnInit {
 
   getNavbarData(games: Array<Game>) {
     let arrNavbar: Array<string> = [];
+
     games.forEach((game: Game) => {
       arrNavbar = arrNavbar.concat(game.categories);
     });
 
     arrNavbar = [...new Set(arrNavbar)];
+
     let order: Array<Navbar> = [];
+
     this.navbarData = arrNavbar.map((item: string) => {
       if (item === 'top') {
         return {
@@ -59,23 +60,25 @@ export class NavBarComponent implements OnInit {
           href: item,
         };
       }
+
       if (item === 'ball' || item === 'virtual' || item === 'fun') {
         order.push({
           label: item,
           href: item,
         });
       }
+
       return {
         label: item,
         href: item,
       };
     });
+
     this.navbarData = this.navbarData.filter(
       (item: Navbar) =>
         item.href !== 'ball' && item.href !== 'virtual' && item.href !== 'fun'
     );
+
     this.orders = order;
   }
-
-
 }

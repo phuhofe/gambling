@@ -18,6 +18,7 @@ import {StoreModule, ActionReducer, MetaReducer} from '@ngrx/store';
 import {ROOT_REDUCERS} from './store/reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { CasinoEffects } from './casino/store/effects/casino.effect';
+import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 
 export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
   return function (state, action) {
@@ -31,6 +32,7 @@ export const metaReducers: MetaReducer<any>[] = [debug];
   declarations: [
     AppComponent,
     PageNotFoundComponent,
+    SplashScreenComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { Jackpot } from '../../models/casino.model';
+
 import * as fromReducer from '../reducers';
+import { Jackpot } from '../../models/casino.model';
 
 export const selectCasinoState =
   createFeatureSelector<fromReducer.CasinoState>('casino');

@@ -1,3 +1,5 @@
+$jackpot-green: #8dc63f;
+
 .nav-expand-color {
   color: #3f3f3f;
 
@@ -21,7 +23,7 @@
 }
 
 .bg-green {
-  background-color: #8dc63f;
+  background-color: $jackpot-green;
 }
 
 .navbar {
@@ -36,6 +38,14 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.nav-item {
+  &:hover {
+    background: $jackpot-green;
+    cursor: pointer;
+  }
+}
+
 @media only screen and (max-width: 992px) {
   .menu-item {
     display: flex;

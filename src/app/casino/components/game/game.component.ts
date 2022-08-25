@@ -8,8 +8,8 @@ import { Game } from '../../models/casino.model';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
-  @Input() game: Game | undefined;
-  
+  @Input() game!: Game;
+
   constructor() { }
 
   ngOnInit(): void {

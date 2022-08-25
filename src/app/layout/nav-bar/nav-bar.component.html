@@ -18,9 +18,9 @@
           <li class="nav-item" *ngFor="let item of navbarData">
             <a
               aria-current="page"
-              [routerLink]="[item.href]"
+              routerLink="/{{ item.href }}"
               [routerLinkActive]="['bg-green']"
-              class="nav-link text-uppercase fw-normal list-unstyled text-decoration-none px-4 nav-info"
+              class="nav-link text-center text-uppercase fw-normal list-unstyled text-decoration-none px-4 nav-info"
             >
               {{ item.label }}
             </a>

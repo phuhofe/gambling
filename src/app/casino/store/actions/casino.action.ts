@@ -13,7 +13,6 @@ export const getGamesFail = createAction(
   props<{ error: any }>()
 );
 
-
 export const getJackpots = createAction('[CASINO] Get Jackpots');
 
 export const getJackpotsSuccess = createAction(
