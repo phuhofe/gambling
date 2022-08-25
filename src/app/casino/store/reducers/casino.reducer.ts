@@ -4,7 +4,7 @@ import { Game, Jackpot } from '../../models/casino.model';
 
 export interface CasinoState {
   games: Array<Game>;
-  jackpots: Array<Jackpot>
+  jackpots: Array<Jackpot>;
   isLoading: boolean;
 }
 
@@ -34,18 +34,17 @@ export const casinoReducer = createReducer(
   }),
 
   on(CasinoActions.getJackpots, (state) => {
-    return { ...state, isLoading: true };
+    return { ...state };
   }),
 
   on(CasinoActions.getJackpotsSuccess, (state, action) => {
     return {
       ...state,
-      isLoading: false,
       jackpots: action.jackpots,
     };
   }),
 
   on(CasinoActions.getJackpotsFail, (state) => {
-    return { ...state, isLoading: false };
-  }),
+    return { ...state };
+  })
 );

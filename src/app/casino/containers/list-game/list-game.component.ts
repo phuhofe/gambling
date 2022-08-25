@@ -40,6 +40,8 @@ export class ListGameComponent implements OnInit {
         this.gamesOfCategory = games.filter((game: Game) =>
           game.categories.includes(params['id'])
         );
+        console.log('this.gamesOfCategory', this.gamesOfCategory);
+        
       });
   }
 }
