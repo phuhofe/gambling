@@ -21,8 +21,8 @@ export class ListGameComponent implements OnInit {
   categorySelected = '';
 
   constructor(private store: Store, private route: ActivatedRoute) {
-    this.store.dispatch(getGames());
     this.route.params.subscribe((params) => {
+      this.store.dispatch(getGames());
       this.categorySelected = params['id'];
     });
   }
@@ -34,14 +34,12 @@ export class ListGameComponent implements OnInit {
   subscriptionData() {
     combineLatest([this.games$, this.route.params])
       .pipe(
-        filter(([games, params]) => games !== null && params['id'] !== null),
+        filter(([games, params]) => games !== null && params['id'] !== null)
       )
       .subscribe(([games, params]) => {
         this.gamesOfCategory = games.filter((game: Game) =>
           game.categories.includes(params['id'])
         );
-        console.log('this.gamesOfCategory', this.gamesOfCategory);
-        
       });
   }
 }

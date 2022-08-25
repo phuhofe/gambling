@@ -9,10 +9,8 @@ import { getJackpots } from '../../store/actions';
   templateUrl: './casino-page.component.html',
   styleUrls: ['./casino-page.component.scss'],
 })
-export class CasinoPageComponent implements OnInit {
+export class CasinoPageComponent {
   constructor(private store: Store) {
     this.store.dispatch(getJackpots());
   }
-
-  ngOnInit() {}
 }
